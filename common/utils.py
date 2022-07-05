@@ -132,7 +132,7 @@ def parse_args(arg_mode):
     parser = argparse.ArgumentParser(description='Relational Embedding for Few-Shot Classification (ICCV 2021)')
 
     ''' about dataset '''
-    parser.add_argument('-dataset', type=str, default='miniimagenet',
+    parser.add_argument('-dataset', type=str, default='cifar_fs',
                         choices=['miniimagenet', 'cub', 'tieredimagenet', 'cifar_fs'])
     parser.add_argument('-data_dir', type=str, default='datasets', help='dir of datasets')
 
@@ -142,10 +142,10 @@ def parse_args(arg_mode):
     parser.add_argument('-lamb', type=float, default=0.25, metavar='lambda', help='loss balancing term')
 
     ''' about training schedules '''
-    parser.add_argument('-max_epoch', type=int, default=80, help='max epoch to run')
+    parser.add_argument('-max_epoch', type=int, default=60, help='max epoch to run')
     parser.add_argument('-lr', type=float, default=0.1, help='learning rate')
     parser.add_argument('-gamma', type=float, default=0.05, help='learning rate decay factor')
-    parser.add_argument('-milestones', nargs='+', type=int, default=[60, 70], help='milestones for MultiStepLR')
+    parser.add_argument('-milestones', nargs='+', type=int, default=[30, 50], help='milestones for MultiStepLR')
     parser.add_argument('-save_all', action='store_true', help='save models on each epoch')
 
     ''' about few-shot episodes '''
