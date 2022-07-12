@@ -58,7 +58,7 @@ class RENet(nn.Module):
             raise NotImplementedError
 
         if self.args.self_method == 'scr':
-            layers.append(corr_block1)
+#             layers.append(corr_block1)
             layers.append(corr_block)
         layers.append(self_block)
         return nn.Sequential(*layers)
